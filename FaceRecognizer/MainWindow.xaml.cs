@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Emgu.CV;
+using Emgu.CV.Structure;
+using Emgu.CV.UI;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FaceRecognizer
 {
@@ -23,6 +13,10 @@ namespace FaceRecognizer
         public MainWindow()
         {
             InitializeComponent();
+            Capture cap = new Capture();
+            myImage.Image = cap.QueryFrame();
+            CascadeClassifier csClassfier = new CascadeClassifier(Application.Current.Current);
+
         }
     }
 }
